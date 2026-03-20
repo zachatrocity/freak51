@@ -59,6 +59,54 @@ a:hover {
   align-items: center;
   text-align: center;
   gap: 14px;
+  position: relative;
+}
+
+/* Decorative ring ("moon") — positioned absolutely so it does not affect layout/centering */
+.moon {
+  position: absolute;
+  width: clamp(150px, 22vw, 220px);
+  height: clamp(150px, 22vw, 220px);
+  border-radius: 999px;
+  left: 66%;
+  top: 56px;
+  transform: translate(-50%, 0);
+  pointer-events: none;
+  opacity: 0.9;
+
+  border: 2px solid rgba(255, 79, 216, 0.55);
+  box-shadow:
+    0 0 0 1px rgba(25, 247, 255, 0.35) inset,
+    0 0 32px rgba(255, 79, 216, 0.28),
+    0 0 52px rgba(25, 247, 255, 0.18);
+}
+
+.moon::before,
+.moon::after {
+  content: "";
+  position: absolute;
+  inset: -16px;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.moon::before {
+  border: 1px dashed rgba(25, 247, 255, 0.45);
+  opacity: 0.7;
+}
+
+.moon::after {
+  inset: -28px;
+  border: 1px solid rgba(59, 255, 183, 0.18);
+  opacity: 0.65;
+}
+
+@media (max-width: 520px) {
+  .moon {
+    left: 72%;
+    top: 44px;
+    opacity: 0.75;
+  }
 }
 
 /* Neon logo */
