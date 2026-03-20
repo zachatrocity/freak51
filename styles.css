@@ -2,6 +2,10 @@
   --bg: #070711;
   --fg: #e9e9ff;
   --muted: rgba(233, 233, 255, 0.78);
+
+  --c-cyan: #19f7ff;
+  --c-mag: #ff4fd8;
+  --c-mint: #3bffb7;
 }
 
 * {
@@ -17,13 +21,25 @@ body {
   margin: 0;
   min-height: 100vh;
   color: var(--fg);
-  background: var(--bg);
+  background:
+    radial-gradient(1200px 700px at 50% -10%, rgba(255, 79, 216, 0.22), transparent 60%),
+    radial-gradient(900px 700px at 10% 30%, rgba(25, 247, 255, 0.14), transparent 60%),
+    radial-gradient(1200px 800px at 90% 35%, rgba(59, 255, 183, 0.10), transparent 60%),
+    linear-gradient(180deg, #070711, #0a0a1b);
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
 }
 
-/* HARD REQUIREMENT: actual center (pure CSS)
-   This is the same centering pattern used by lots of OSS templates:
-   a full-viewport wrapper + grid/flex centering + symmetric padding for margins. */
+a {
+  color: inherit;
+  text-decoration-color: rgba(255, 79, 216, 0.55);
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  text-decoration-color: rgba(25, 247, 255, 0.75);
+}
+
+/* HARD REQUIREMENT: actual center (pure CSS) */
 .frame {
   /* Fallbacks for older mobile engines */
   min-height: 100vh;
@@ -45,10 +61,36 @@ body {
   gap: 14px;
 }
 
+/* Neon logo */
 .logo {
   font-weight: 900;
   letter-spacing: 0.06em;
-  font-size: clamp(48px, 10vw, 120px);
+  font-size: clamp(54px, 10vw, 130px);
+  line-height: 1;
+
+  /* gradient fill */
+  background: linear-gradient(135deg, var(--c-cyan) 0%, var(--c-mag) 55%, var(--c-mint) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  /* crisp outline + glow */
+  -webkit-text-stroke: 6px rgba(255, 255, 255, 0.06);
+  text-shadow:
+    0 0 18px rgba(25, 247, 255, 0.22),
+    0 0 30px rgba(255, 79, 216, 0.22),
+    0 0 60px rgba(25, 247, 255, 0.14);
+}
+
+/* fallback if text-stroke unsupported */
+@supports not (-webkit-text-stroke: 1px black) {
+  .logo {
+    text-shadow:
+      0 2px 0 rgba(255, 255, 255, 0.06),
+      0 0 18px rgba(25, 247, 255, 0.22),
+      0 0 30px rgba(255, 79, 216, 0.22),
+      0 0 60px rgba(25, 247, 255, 0.14);
+  }
 }
 
 .tagline {
@@ -71,6 +113,15 @@ body {
   text-decoration: none;
   color: var(--fg);
   font-weight: 800;
+  box-shadow:
+    0 0 0 1px rgba(25, 247, 255, 0.10) inset,
+    0 10px 40px rgba(255, 79, 216, 0.10),
+    0 8px 28px rgba(25, 247, 255, 0.08);
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 79, 216, 0.35);
 }
 
 .sub {
