@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b0b18" />
+
+    <title>Freak51</title>
+    <meta
+      name="description"
+      content="Freak51: a strange little offshoot of the Freq51 Meshtastic mesh community. Enter the neon." />
+
+    <meta property="og:title" content="Freak51" />
+    <meta
+      property="og:description"
+      content="A weird, freaky subset of the Freq51 community. Meshtastic, LoRa, and neon." />
+    <meta property="og:type" content="website" />
+
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <div class="bg" aria-hidden="true">
+      <div class="bg__grid"></div>
+      <div class="bg__circuit"></div>
+      <div class="bg__noise"></div>
+      <div class="bg__scan"></div>
+      <div class="bg__glow"></div>
+    </div>
+
+    <header class="top">
+      <div class="top__inner">
+        <div class="badge" title="Unofficial">UNOFFICIAL</div>
+        <nav class="nav" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#vibe">Vibe</a>
+          <a href="#join">Join</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="main">
+      <section class="hero" aria-label="Freak51 hero">
+        <div class="hero__inner" data-parallax>
+          <div class="mark" aria-hidden="true">
+            <svg class="mark__svg" viewBox="0 0 1100 320" role="img" aria-label="FREAK51">
+              <defs>
+                <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#19f7ff" />
+                  <stop offset="0.5" stop-color="#ff4fd8" />
+                  <stop offset="1" stop-color="#3bffb7" />
+                </linearGradient>
+
+                <filter id="neon" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="3" result="blur" />
+                  <feColorMatrix
+                    in="blur"
+                    type="matrix"
+                    values="
+                      1 0 0 0 0
+                      0 0.3 1 0 0
+                      0 0 1 0 0
+                      0 0 0 1 0"
+                    result="cyan" />
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur2" />
+                  <feColorMatrix
+                    in="blur2"
+                    type="matrix"
+                    values="
+                      1 0 0 0 0
+                      0 0 1 0 0
+                      0 0 0.3 0 0
+                      0 0 0 1 0"
+                    result="mag" />
+                  <feMerge>
+                    <feMergeNode in="cyan" />
+                    <feMergeNode in="mag" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+
+                <filter id="glitch">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.009" numOctaves="2" seed="2" result="t" />
+                  <feDisplacementMap in="SourceGraphic" in2="t" scale="2" xChannelSelector="R" yChannelSelector="G" />
+                </filter>
+              </defs>
+
+              <g filter="url(#neon)">
+                <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" class="mark__text">
+                  FREAK51
+                </text>
+              </g>
+            </svg>
+
+            <div class="spark" aria-hidden="true"></div>
+          </div>
+
+          <h1 class="sr">Freak51</h1>
+
+          <p class="tagline">
+            A weird little offshoot of the <a href="https://freq51.net" rel="noreferrer">Freq51</a> Meshtastic mesh.
+            Less polite. More neon.
+          </p>
+
+          <div class="cta">
+            <a class="btn btn--primary" href="https://freq51.net" rel="noreferrer">
+              Enter Freq51
+              <span aria-hidden="true">→</span>
+            </a>
+            <a class="btn btn--ghost" href="#about">What is this?</a>
+          </div>
+
+          <div class="chips" aria-label="Highlights">
+            <span class="chip">LoRa</span>
+            <span class="chip">Meshtastic</span>
+            <span class="chip">Idaho / Utah-ish</span>
+            <span class="chip">Off-grid comms</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="section__inner">
+          <h2>About</h2>
+          <div class="cards">
+            <article class="card">
+              <h3>Freq51, quickly</h3>
+              <p>
+                Freq51 is a community building an open <strong>Meshtastic®</strong> mesh across the Intermountain West.
+                Cheap LoRa radios + open source = long-range messages when the internet is flaky or gone.
+              </p>
+              <p class="fine">
+                Not life-critical. Not a replacement for real emergency services. Still: extremely cool.
+              </p>
+            </article>
+            <article class="card">
+              <h3>So what’s Freak51?</h3>
+              <p>
+                Freak51 is the unofficial, weird corner.
+                Think: synthwave aesthetics, fringe experiments, silly projects, and “what if we…” energy.
+              </p>
+              <p class="fine">
+                We don’t run the mesh. We vibe next to it.
+              </p>
+            </article>
+            <article class="card">
+              <h3>What do I do now?</h3>
+              <p>
+                If you want the real docs, onboarding, and config—go to the source.
+              </p>
+              <p>
+                <a class="inline" href="https://freq51.net" rel="noreferrer">freq51.net</a>
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="vibe" class="section section--alt">
+        <div class="section__inner">
+          <h2>The Vibe</h2>
+          <div class="split">
+            <div>
+              <p>
+                Build nodes. Make the map glow. Keep RF healthy. Avoid blasting the mesh with pointless downlinked internet chatter.
+              </p>
+              <ul class="list">
+                <li><strong>Pure RF first</strong> — mesh > spam.</li>
+                <li><strong>Small packets</strong> — be a good neighbor.</li>
+                <li><strong>Try weird stuff</strong> — responsibly.</li>
+              </ul>
+            </div>
+            <div class="terminal" aria-label="Pseudo terminal">
+              <div class="terminal__bar">
+                <span class="dot dot--r"></span>
+                <span class="dot dot--y"></span>
+                <span class="dot dot--g"></span>
+                <span class="terminal__title">freak51://handshake</span>
+              </div>
+              <pre class="terminal__body"><code><span class="k">$</span> mesh ping
+<span class="ok">ok</span> 7 hops
+
+<span class="k">$</span> set vibe --neon --weird --respectful
+<span class="ok">ok</span>
+
+<span class="k">$</span> open https://freq51.net
+<span class="ok">ok</span> → portal ready</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="join" class="section">
+        <div class="section__inner">
+          <h2>Join</h2>
+          <p>
+            This page is basically a neon sign with one job.
+          </p>
+          <div class="cta cta--center">
+            <a class="btn btn--primary" href="https://freq51.net" rel="noreferrer">Go to Freq51 →</a>
+          </div>
+          <p class="fine center">
+            Freak51 isn’t an official org. If you want official info, configs, and onboarding: that button.
+          </p>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer__inner">
+          <p>
+            <span class="mono">FREAK51</span> • a neon side-quest for the
+            <a href="https://freq51.net" rel="noreferrer">Freq51</a> community
+          </p>
+          <p class="fine">
+            Meshtastic® is a registered trademark of Meshtastic LLC. This site is unofficial.
+          </p>
+        </div>
+      </footer>
+    </main>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>
