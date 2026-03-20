@@ -6,99 +6,19 @@
     <meta name="theme-color" content="#0b0b18" />
 
     <title>Freak51</title>
-    <meta
-      name="description"
-      content="Freak51: a neon entry point into the Freq51 Meshtastic mesh community." />
-
-    <meta property="og:title" content="Freak51" />
-    <meta
-      property="og:description"
-      content="A weird, freaky subset of the Freq51 community. Meshtastic, LoRa, and neon." />
-    <meta property="og:type" content="website" />
+    <meta name="description" content="Freak51: neon entry point into the Freq51 Meshtastic mesh." />
 
     <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="bg" aria-hidden="true">
-      <div class="bg__grid"></div>
-      <div class="bg__circuit"></div>
-      <div class="bg__noise"></div>
-      <div class="bg__scan"></div>
-      <div class="bg__glow"></div>
-    </div>
-
-    <main class="teaser" aria-label="Freak51 teaser">
-      <div class="teaser__inner" data-parallax>
-        <div class="mark" aria-hidden="true">
-          <svg class="mark__svg" viewBox="0 0 1100 320" role="img" aria-label="FREAK51">
-            <defs>
-              <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#19f7ff" />
-                <stop offset="0.5" stop-color="#ff4fd8" />
-                <stop offset="1" stop-color="#3bffb7" />
-              </linearGradient>
-
-              <filter id="neon" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="3" result="blur" />
-                <feColorMatrix
-                  in="blur"
-                  type="matrix"
-                  values="
-                    1 0 0 0 0
-                    0 0.3 1 0 0
-                    0 0 1 0 0
-                    0 0 0 1 0"
-                  result="cyan" />
-                <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur2" />
-                <feColorMatrix
-                  in="blur2"
-                  type="matrix"
-                  values="
-                    1 0 0 0 0
-                    0 0 1 0 0
-                    0 0 0.3 0 0
-                    0 0 0 1 0"
-                  result="mag" />
-                <feMerge>
-                  <feMergeNode in="cyan" />
-                  <feMergeNode in="mag" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-              </filter>
-            </defs>
-
-            <g filter="url(#neon)">
-              <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" class="mark__text">FREAK51</text>
-            </g>
-          </svg>
-
-          <div class="spark" aria-hidden="true"></div>
-        </div>
-
-        <h1 class="sr">Freak51</h1>
-
-        <p class="tagline">
-          Neon entry point into the <a href="https://freq51.net" rel="noreferrer">Freq51</a> mesh.
-        </p>
-
-        <div class="cta">
-          <a class="btn btn--primary" href="https://freq51.net" rel="noreferrer">
-            Enter Freq51
-            <span aria-hidden="true">→</span>
-          </a>
-        </div>
-
-        <p class="fine">
-          LoRa • Meshtastic • Intermountain mesh
-        </p>
+    <main class="frame" aria-label="Freak51">
+      <div class="center" role="group" aria-label="Freak51 content">
+        <div class="logo" aria-hidden="true">FREAK51</div>
+        <p class="tagline">Neon entry point into the <a href="https://freq51.net" rel="noreferrer">Freq51</a> mesh.</p>
+        <a class="btn" href="https://freq51.net" rel="noreferrer">Enter Freq51 <span aria-hidden="true">→</span></a>
+        <div class="sub">LoRa • Meshtastic • Intermountain mesh</div>
       </div>
-
-      <footer class="mini">
-        <a href="https://freq51.net" rel="noreferrer">freq51.net</a>
-      </footer>
     </main>
-
-    <script src="./script.js" defer></script>
   </body>
 </html>
