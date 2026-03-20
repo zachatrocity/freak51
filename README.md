@@ -1,6 +1,6 @@
 # freak51.com
 
-A neon landing page for **Freak51** — a weird, unofficial side-quest adjacent to the **Freq51** Meshtastic mesh community.
+A neon landing page for **Freak51** — a weird, freaky entry point into the **Freq51** Meshtastic mesh community.
 
 This repo is intentionally simple: static HTML/CSS/JS.
 
@@ -14,6 +14,6 @@ python3 -m http.server 8000
 
 Then visit: http://localhost:8000
 
-## Canonical destination
+## Destination
 
-This page ultimately points people to: https://freq51.net
+This page points people to: https://freq51.net
