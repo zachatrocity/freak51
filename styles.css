@@ -146,26 +146,33 @@ a:hover {
 /* Teaser layout */
 .teaser {
   min-height: 100svh;
-  display: grid;
-  place-items: center;
-  padding: 22px 18px calc(70px + env(safe-area-inset-bottom));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px 18px calc(76px + env(safe-area-inset-bottom));
   position: relative;
 }
 
 .teaser__inner {
   width: min(1100px, 100%);
+  margin-inline: auto;
   text-align: center;
-  padding-inline: 6px;
+  padding-inline: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .mark {
   position: relative;
-  display: inline-block;
-  padding: 18px 10px 0;
+  display: block;
+  width: min(980px, 92vw);
+  padding: 18px 0 0;
+  margin: 0 auto;
 }
 
 .mark__svg {
-  width: min(980px, 92vw);
+  width: 100%;
   height: auto;
   filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.6));
 }
@@ -215,8 +222,8 @@ a:hover {
 
 .spark {
   position: absolute;
-  right: 4%;
-  top: 44%;
+  left: 74%;
+  top: 54%;
   width: 170px;
   height: 170px;
   border-radius: 50%;
@@ -226,7 +233,7 @@ a:hover {
     0 0 32px rgba(255, 79, 216, 0.35),
     0 0 52px rgba(25, 247, 255, 0.22);
   opacity: 0.9;
-  transform: rotate(-10deg);
+  transform: translate(-50%, -50%) rotate(-10deg);
 }
 
 .spark::before,
@@ -314,12 +321,11 @@ a:hover {
 
 /* Minimal footer */
 .mini {
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
-  bottom: 18px;
+  bottom: 12px;
   display: flex;
-  gap: 12px;
   justify-content: center;
   align-items: center;
   font-size: 12px;
@@ -327,6 +333,11 @@ a:hover {
   text-transform: uppercase;
   color: rgba(233, 233, 255, 0.72);
   padding-bottom: env(safe-area-inset-bottom);
+  pointer-events: none;
+}
+
+.mini a {
+  pointer-events: auto;
 }
 
 .mini a {
